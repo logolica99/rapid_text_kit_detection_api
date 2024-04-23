@@ -54,7 +54,7 @@ class_names=['NEGATIVE', 'POSITIVE']
 
 
 def predict_image(image_path):
-  print(img_path)
+  print(image_path)
   img = tf.keras.preprocessing.image.load_img(image_path, target_size=(256, 256), color_mode="grayscale")
   img_array = tf.keras.preprocessing.image.img_to_array(img)
 
