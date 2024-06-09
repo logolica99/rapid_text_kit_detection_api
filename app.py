@@ -11,11 +11,11 @@ from flask import Flask, request, jsonify
 app = Flask(__name__)
 
 
-model = tf.keras.models.load_model('trained_model_robust.h5')
+model = tf.keras.models.load_model('trained_model_version_7.h5')
 
 
  
-class_names=['NEGATIVE', 'POSITIVE']
+class_names=['INVALID', 'NEGATIVE', 'POSITIVE']
 
 
 def predict_image(image_path):
@@ -47,7 +47,7 @@ def predict():
     return jsonify({'error': 'Missing image_link in request body'}), 400
 
   image_link = data['image_link']
-
+  print(data)
 
   # Download the image
   try:
